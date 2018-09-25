@@ -18,7 +18,7 @@ io.on('connection', (client) => {
     });
 
     client.on('atenderTicket', (data, callback) => {
-        if (data.escritorio) {
+        if (!data.escritorio) {
             return callback({
                 err: true,
                 mensaje: 'El escritorio es necesario '
